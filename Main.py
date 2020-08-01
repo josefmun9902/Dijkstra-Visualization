@@ -26,7 +26,7 @@ def setupGrid():
 	for row in range(height // 20):
 		newRow = []
 		for column in range (width // 20):
-			newRow.append(Node(False, False, False))
+			newRow.append(Node(False, False, False, row, column))
 		grid.append(newRow)
 def setupScreenInfo():
 	pygame.display.set_caption("Pathfinder")
@@ -71,12 +71,14 @@ def checkForEvents():
 		if pygame.mouse.get_pressed() == (True, False, False) and startSelected == False:
 			startPos = pygame.mouse.get_pos()
 			grid[startPos[1] // 20][startPos[0] // 20].isStart = True
+			grid[startPos[1] // 20][startPos[0] // 20].distanceToNode = 0
 			startSelected = True
 		elif pygame.mouse.get_pressed() == (True, False, False) and endSelected == False:
 			endPos = pygame.mouse.get_pos()
 			grid[endPos[1] // 20][endPos[0] // 20].isEnd = True
 			endSelected = True			
-
+def checkAdjacentNodes(Node):
+	pass
 
 setupGrid()
 setupScreenInfo()
