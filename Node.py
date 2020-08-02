@@ -7,6 +7,7 @@ class Node:
     distanceToNode = 999
     gridRow = None
     gridColumn = None
+    isBest = False
 
     #FUNCTIONS
     def __init__(self, isStart, isEnd, isVisited, gridRow, gridColumn):
